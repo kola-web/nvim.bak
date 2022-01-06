@@ -1,0 +1,27 @@
+{
+  "name": "nvim-snippets",
+  "author": "abzcoding",
+  "engines": {
+    "vscode": "^1.11.0"
+  },
+  "contributes": {
+    "snippets": [
+      {
+        "language": "lua",
+        "path": "./lua.json"
+      },
+      {
+        "language": "sh",
+        "path": "./shell.json"
+      },
+      {
+        "language": "vue",
+        "path": "./vue.json"
+      },
+      {
+        "language": "html",
+        "path": "./html.json"
+      }
+    ]
+  }
+}
