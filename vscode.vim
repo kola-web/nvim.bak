@@ -18,6 +18,9 @@ noremap <C-d> Lzz
 
 map <CR> editor.action.smartSelect.expand
 map <bs> editor.action.smartSelect.shrink
+" map <Cr> editor.emmet.action.nextEditPoint
+" map <Bs> editor.emmet.action.prevEditPoint
+
 " 显示悬停信息
 noremap K :vsc editor.action.showHover<CR>
 
@@ -47,6 +50,3 @@ noremap <C-m> :vsc workbench.action.minimizeOtherEditors<CR>
 noremap ga :vsc extension.alignTokens<CR>
 " 打开侧边定义
 noremap gD :vsc editor.action.revealDefinitionAside<CR>
-
-nnoremap ge :vsc editor.action.marker.nextInFiles<CR>
-nnoremap gE :vsc editor.action.marker.prevInFiles<CR>
