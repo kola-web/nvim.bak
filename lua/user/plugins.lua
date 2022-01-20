@@ -67,6 +67,8 @@ return packer.startup(function(use)
   use "lunarvim/darkplus.nvim"
   use "sainnhe/gruvbox-material"
   use "rebelot/kanagawa.nvim"
+  use "folke/tokyonight.nvim"
+  use "dracula/vim"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -85,6 +87,7 @@ return packer.startup(function(use)
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+  use "github/copilot.vim"
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
