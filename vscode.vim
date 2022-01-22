@@ -24,8 +24,8 @@ map <bs> editor.action.smartSelect.shrink
 " 显示悬停信息
 noremap K :vsc editor.action.showHover<CR>
 
-noremap <tab> :vsc workbench.action.nextEditor<CR>
-noremap <S-tab> :vsc workbench.action.previousEditor<CR>
+" noremap <tab> :vsc workbench.action.nextEditor<CR>
+" noremap <S-tab> :vsc workbench.action.previousEditor<CR>
 
 " 多光标
 noremap <C-n>  editor.action.addSelectionToNextFindMatch
@@ -41,9 +41,11 @@ noremap z6 editor.foldLevel6
 noremap z7 editor.foldLevel7
 noremap zj editor.gotoNextFold
 noremap zk editor.gotoPreviousFold
+noremap zp dakara-foldplus.cursor.exclude
+noremap zl dakara-foldplus.levelAtCursor
 
 noremap zp editor.gotoParentFold
-noremap <leader> :vsc whichkey.show<CR>
+noremap <space> :vsc whichkey.show<CR>
 
 noremap <C-m> :vsc workbench.action.minimizeOtherEditors<CR>
 
