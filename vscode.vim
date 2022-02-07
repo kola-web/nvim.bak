@@ -41,8 +41,8 @@ noremap z6 editor.foldLevel6
 noremap z7 editor.foldLevel7
 noremap zj editor.gotoNextFold
 noremap zk editor.gotoPreviousFold
-noremap zp dakara-foldplus.cursor.exclude
-noremap zl dakara-foldplus.levelAtCursor
+noremap zp :vsc dakara-foldplus.cursor.exclude<cr>
+noremap zl :vsc dakara-foldplus.levelAtCursor<cr>
 
 noremap zp editor.gotoParentFold
 noremap <space> :vsc whichkey.show<CR>

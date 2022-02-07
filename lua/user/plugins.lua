@@ -69,7 +69,7 @@ return packer.startup(function(use)
   use "rebelot/kanagawa.nvim"
   use "folke/tokyonight.nvim"
   use "dracula/vim"
-  use "ellisonleao/gruvbox.nvim"
+  use "morhetz/gruvbox"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
