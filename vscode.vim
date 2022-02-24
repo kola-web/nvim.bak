@@ -18,8 +18,6 @@ noremap <C-d> Lzz
 
 map <CR> editor.action.smartSelect.expand
 map <bs> editor.action.smartSelect.shrink
-" map <Cr> editor.emmet.action.nextEditPoint
-" map <Bs> editor.emmet.action.prevEditPoint
 
 " 显示悬停信息
 noremap K :vsc editor.action.showHover<CR>

@@ -86,9 +86,11 @@ return packer.startup(function(use)
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+  use "ray-x/lsp_signature.nvim"
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
-  use "github/copilot.vim"
+  -- use "github/copilot.vim"
+  use "b0o/schemastore.nvim"
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
@@ -121,6 +123,10 @@ return packer.startup(function(use)
 
   -- tmux集成
   use { "aserowy/tmux.nvim" }
+
+  --filetype
+
+  use { "nathom/filetype.nvim" }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
