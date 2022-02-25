@@ -77,7 +77,12 @@ cmp.setup {
       elseif check_backspace() then
         fallback()
       else
-        fallback()
+        local copilot_keys = vim.fn["copilot#Accept"]()
+        if copilot_keys ~= "" then
+          vim.api.nvim_feedkeys(copilot_keys, "i", true)
+        else
+          fallback()
+        end
       end
     end, {
       "i",

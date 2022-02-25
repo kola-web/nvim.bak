@@ -89,7 +89,7 @@ return packer.startup(function(use)
   use "ray-x/lsp_signature.nvim"
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
-  -- use "github/copilot.vim"
+  use "github/copilot.vim"
   use "b0o/schemastore.nvim"
 
   -- Telescope
