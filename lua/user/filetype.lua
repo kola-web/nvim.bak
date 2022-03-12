@@ -18,6 +18,8 @@ filetype.setup {
     complex = {
       -- Set the filetype of any full filename matching the regex to gitconfig
       [".*git/config"] = "gitconfig", -- Included in the plugin
+      ["nginx/template/*"] = "nginx", -- Included in the plugin
+      ["nginx/*.conf"] = "nginx", -- Included in the plugin
     },
     shebang = {
       -- Set the filetype of files with a dash shebang to sh

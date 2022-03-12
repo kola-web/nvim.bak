@@ -98,6 +98,7 @@ local mappings = {
 	["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
 	["m"] = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
   ["z"] = { "<cmd>ZenMode<cr>", "Zen" },
+  [";"] = { "<cmd>Trouble<cr>", "Trouble" },
 
 	p = {
 		name = "Packer",

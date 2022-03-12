@@ -50,3 +50,8 @@ noremap <C-m> :vsc workbench.action.minimizeOtherEditors<CR>
 noremap ga :vsc extension.alignTokens<CR>
 " 打开侧边定义
 noremap gD :vsc editor.action.revealDefinitionAside<CR>
+
+" noremap w <leader>w
+" noremap e <leader>e
+" noremap b <leader>b
+" omap aw i<leader>w

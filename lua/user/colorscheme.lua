@@ -3,6 +3,7 @@
 -- colorscheme tokyonight
 -- colorscheme dracula
 -- colorscheme gruvbox
+-- colorscheme onedark
 
 vim.cmd [[
 try

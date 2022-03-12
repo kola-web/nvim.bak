@@ -70,6 +70,8 @@ return packer.startup(function(use)
   use "folke/tokyonight.nvim"
   use "dracula/vim"
   use "morhetz/gruvbox"
+  use "joshdick/onedark.vim"
+  use "navarasu/onedark.nvim"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -91,6 +93,7 @@ return packer.startup(function(use)
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
   use "github/copilot.vim"
   use "b0o/schemastore.nvim"
+  use { "folke/trouble.nvim" }
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
@@ -125,8 +128,10 @@ return packer.startup(function(use)
   use { "aserowy/tmux.nvim" }
 
   --filetype
-
   use { "nathom/filetype.nvim" }
+
+  --- markdown
+  use { "iamcco/markdown-preview.nvim" }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
