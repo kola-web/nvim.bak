@@ -72,6 +72,7 @@ return packer.startup(function(use)
   use "morhetz/gruvbox"
   use "joshdick/onedark.vim"
   use "navarasu/onedark.nvim"
+  use "projekt0n/github-nvim-theme"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
