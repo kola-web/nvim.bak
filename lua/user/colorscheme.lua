@@ -5,13 +5,13 @@
 -- colorscheme gruvbox
 -- colorscheme onedark
 
--- vim.cmd [[
--- try
---   colorscheme tokyonight
--- catch /^Vim\%((\a\+)\)\=:E185/
---   colorscheme default
---   set background=dark
--- endtry
--- ]]
+vim.cmd [[
+try
+  colorscheme gruvbox-material
+catch /^Vim\%((\a\+)\)\=:E185/
+  colorscheme default
+  set background=dark
+endtry
+]]
 
-require('github-theme').setup()
+-- require('github-theme').setup()
