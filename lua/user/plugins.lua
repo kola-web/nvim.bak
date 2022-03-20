@@ -64,6 +64,7 @@ return packer.startup(function(use)
 
   -- Colorschemes
   -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
+  use "norcalli/nvim-base16.lua"
   use "lunarvim/darkplus.nvim"
   use "sainnhe/gruvbox-material"
   use "rebelot/kanagawa.nvim"
