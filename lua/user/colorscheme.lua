@@ -7,7 +7,7 @@
 
 vim.cmd [[
 try
-  colorscheme tokyonight
+  colorscheme github_*
 catch /^Vim\%((\a\+)\)\=:E185/
   colorscheme default
   set background=dark
