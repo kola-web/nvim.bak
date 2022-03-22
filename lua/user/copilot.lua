@@ -5,6 +5,8 @@ vim.g.copilot_tab_fallback = ""
 vim.g.copilot_no_tab_map = true
 
 vim.cmd [[
-  " imap <silent><script><expr> <C-E> copilot#Accept()
-  imap <silent><script><expr> <C-E> copilot#Accept("\<CR>")
+  imap <silent><script><expr> <C-E> copilot#Accept()
+  " imap <silent><script><expr> <C-E> copilot#Accept("\<CR>")
 ]]
+
+
