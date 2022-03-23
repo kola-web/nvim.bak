@@ -8,6 +8,7 @@ if not snip_status_ok then
   return
 end
 
+require("luasnip/loaders/from_vscode").load { paths = { "~/.config/nvim/vscodesinps" } } -- Load snippets from my-snippets folder
 require("luasnip/loaders/from_vscode").lazy_load()
 
 local check_backspace = function()
@@ -49,12 +50,7 @@ cmp.setup {
       elseif check_backspace() then
         fallback()
       else
-        local copilot_keys = vim.fn["copilot#Accept"]()
-        if copilot_keys ~= "" then
-          vim.api.nvim_feedkeys(copilot_keys, "i", true)
-        else
-          fallback()
-        end
+        fallback()
       end
     end, {
       "i",

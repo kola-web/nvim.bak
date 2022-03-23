@@ -1,39 +1,29 @@
-local null_ls = require "null-ls"
-local b = null_ls.builtins
+local null_ls_status_ok, null_ls = pcall(require, "null-ls")
+if not null_ls_status_ok then
+  return
+end
 
-local sources = {
+-- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
+local formatting = null_ls.builtins.formatting
+-- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
+local diagnostics = null_ls.builtins.diagnostics
 
-  b.formatting.prettier.with {
-    extra_args = {
-      "--print-width 120",
-      "--tab-width 2",
-      "--html-whitespace-sensitivity ignore",
-      "--vue-indent-script-and-style true",
-      "--trailing-comma all",
-    },
-  },
-  b.formatting.deno_fmt,
-  b.diagnostics.eslint,
-
-  -- Lua
-  b.formatting.stylua,
-  b.diagnostics.luacheck.with { extra_args = { "--global vim" } },
-
-  -- Shell
-  b.formatting.shfmt.with { extra_args = { "-i 2 -ci" } },
-  b.diagnostics.shellcheck.with { diagnostics_format = "#{m} [#{c}]" },
-}
-
-local M = {}
-
+-- https://github.com/prettier-solidity/prettier-plugin-solidity
+-- npm install --save-dev prettier prettier-plugin-solidity
 null_ls.setup {
-  debug = true,
-  sources = sources,
-
-  -- format on save
-  -- on_attach = function(client)
-  --   if client.resolved_capabilities.document_formatting then
-  --     vim.cmd "autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()"
-  --   end
-  -- end,
+  debug = false,
+  sources = {
+    formatting.prettier.with {
+      extra_filetypes = { "toml", "solidity" },
+      extra_args = {
+        "--print-width 120",
+        "--tab-width 2",
+        "--html-whitespace-sensitivity ignore",
+        "--vue-indent-script-and-style true",
+        "--trailing-comma all",
+      },
+    },
+    formatting.black.with { extra_args = { "--fast" } },
+    formatting.stylua,
+  },
 }

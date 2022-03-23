@@ -81,6 +81,7 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-cmdline" -- cmdline completions
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
   use "hrsh7th/cmp-nvim-lsp"
+  use "hrsh7th/cmp-nvim-lua"
 
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
@@ -89,16 +90,25 @@ return packer.startup(function(use)
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
-  use "ray-x/lsp_signature.nvim"
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
-  -- use "github/copilot.vim"
-  use "b0o/schemastore.nvim"
-  use { "folke/trouble.nvim" }
+  use "filipdutescu/renamer.nvim"
+  use "simrat39/symbols-outline.nvim"
+  use "ray-x/lsp_signature.nvim"
+  use "b0o/SchemaStore.nvim"
+  use {
+    "folke/trouble.nvim",
+    cmd = "TroubleToggle",
+  }
+  use "github/copilot.vim"
+  use "RRethy/vim-illuminate"
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
-  use { "nvim-telescope/telescope-fzf-native.nvim", run = "make" }
+  use "tom-anders/telescope-vim-bookmarks.nvim"
+  use "nvim-telescope/telescope-media-files.nvim"
+  use "nvim-telescope/telescope-ui-select.nvim"
+  use "nvim-telescope/telescope-file-browser.nvim"
 
   -- Treesitter
   use {
@@ -106,9 +116,16 @@ return packer.startup(function(use)
     run = ":TSUpdate",
   }
   use "JoosepAlviste/nvim-ts-context-commentstring"
+  use { "p00f/nvim-ts-rainbow" }
+  -- use {'christianchiarulli/nvim-ts-rainbow'}
+  use "nvim-treesitter/playground"
+  use "windwp/nvim-ts-autotag"
+  use "romgrk/nvim-treesitter-context"
+  use "mizlan/iswap.nvim"
 
   -- Git
   use "lewis6991/gitsigns.nvim"
+  use "f-person/git-blame.nvim"
 
   -- operators
   use { "mg979/vim-visual-multi" }
@@ -123,7 +140,6 @@ return packer.startup(function(use)
   use { "andymass/vim-matchup" }
   use { "windwp/nvim-spectre" }
   use { "norcalli/nvim-colorizer.lua" }
-  use { "chentau/marks.nvim" }
 
   -- tmux集成
   use { "aserowy/tmux.nvim" }
@@ -131,12 +147,15 @@ return packer.startup(function(use)
   --filetype
   use { "nathom/filetype.nvim" }
 
-  --- markdown
+  -- markdown
   use { "iamcco/markdown-preview.nvim" }
+
+  -- marks
+  use { "chentau/marks.nvim" }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
-end)
+plend)

@@ -1,5 +1,5 @@
 {
-  "vbase": {
+  "vtab": {
     "prefix": "vtab // @description",
     "description": "",
     "body": [
@@ -43,15 +43,22 @@
     ]
   },
   "vlist": {
-    "prefix": "vlist",
-    "description": "",
+    "prefix": "vlist // @description",
     "body": [
       "<template>",
       "  <div>",
       "    <a-spin :spinning=\"spinning\">",
-      "      <a-form layout=\"inline\" :form=\"form\" @submit=\"handleSearch\" :scroll=\"true\">",
+      "      <a-form",
+      "        layout=\"inline\"",
+      "        :form=\"form\"",
+      "        @submit=\"handleSearch\"",
+      "        :scroll=\"true\"",
+      "      >",
       "        <a-form-item label=\"\">",
-      "          <a-input v-decorator=\"['keyWord']\" placeholder=\"圈主\\圈名称\"></a-input>",
+      "          <a-input",
+      "            v-decorator=\"['keyWord']\"",
+      "            placeholder=\"圈主\\圈名称\"",
+      "          ></a-input>",
       "        </a-form-item>",
       "        <a-form-item label=\"状态：\">",
       "          <a-select",
@@ -62,7 +69,9 @@
       "            style=\"width: 180px\"",
       "          >",
       "            <a-select-option value=\"0\">全部</a-select-option>",
-      "            <a-select-option v-for=\"(item, key) in []\" :key=\"key\" :value=\"key\">{{ item }}</a-select-option>",
+      "            <a-select-option v-for=\"(item, key) in []\" :key=\"key\" :value=\"key\">",
+      "              {{ item }}",
+      "            </a-select-option>",
       "          </a-select>",
       "        </a-form-item>",
       "        <a-form-item>",
@@ -91,89 +100,89 @@
       "</template>",
       "",
       "<script>",
-      "export default {",
-      "  components: {},",
-      "  data() {",
-      "    return {",
-      "      spinning: false,",
-      "      statusList: [],",
-      "      form: this.\\$form.createForm(this, {}),",
-      "      // table",
-      "      tableData: [],",
-      "      pagination: {",
-      "        current: 1,",
-      "        pageSize: 10,",
-      "        showTotal: total => `共\\${total}条`,",
-      "        onShowSizeChange: pageSize => (this.pageSize = pageSize),",
-      "        onChange: this.onPageChange.bind(this),",
-      "        total: 0,",
-      "        size: \"small\"",
-      "      },",
-      "      columns: [",
-      "        {",
-      "          title: \"\",",
-      "          dataIndex: \"\"",
+      "  export default {",
+      "    components: {},",
+      "    data() {",
+      "      return {",
+      "        spinning: false,",
+      "        statusList: [],",
+      "        form: this.\\$form.createForm(this, {}),",
+      "        // table",
+      "        tableData: [],",
+      "        pagination: {",
+      "          current: 1,",
+      "          pageSize: 10,",
+      "          showTotal: total => `共\\${total}条`,",
+      "          onShowSizeChange: pageSize => (this.pageSize = pageSize),",
+      "          onChange: this.onPageChange.bind(this),",
+      "          total: 0,",
+      "          size: \"small\"",
       "        },",
-      "        {",
-      "          title: \"操作\",",
-      "          align: \"center\",",
-      "          fixed: \"right\",",
-      "          scopedSlots: { customRender: \"options\" }",
-      "        }",
-      "      ]",
-      "    };",
-      "  },",
-      "  mounted() {",
-      "    this.getList();",
-      "  },",
-      "  methods: {",
-      "    // form",
-      "    filterOption(input, option) {",
-      "      return option.componentOptions.children[0].text.toLowerCase().indexOf(input.toLowerCase()) >= 0;",
+      "        columns: [",
+      "          {",
+      "            title: \"\",",
+      "            dataIndex: \"\"",
+      "          },",
+      "          {",
+      "            title: \"操作\",",
+      "            align: \"center\",",
+      "            fixed: \"right\",",
+      "            scopedSlots: { customRender: \"options\" }",
+      "          }",
+      "        ]",
+      "      };",
       "    },",
-      "    handleSearch(e = \"\", page = 1) {",
-      "      e?.preventDefault?.();",
-      "      this.form.validateFields((error, values) => {",
-      "        values.page = page;",
-      "        this.getList(values);",
-      "      });",
-      "    },",
-      "    handleReset() {",
-      "      this.form.resetFields();",
+      "    mounted() {",
       "      this.getList();",
       "    },",
-      "    // table",
-      "    getList({ page = 1, ...reset } = {}) {",
-      "      // getCircleList({ page, ...reset }).then(res => {",
-      "      //   this.tableData = res.list;",
-      "      //   this.pagination.total = Number(res.count);",
-      "      //   this.pagination.current = res.page;",
-      "      // });",
-      "    },",
-      "    onPageChange(page = this.pagination.current) {",
-      "      this.onPageChange(\"\",page);",
-      "    },",
-      "    // options",
-      "    handleDel(text) {",
-      "      this.\\$confirm({",
-      "        title: \"确定删除该**?\",",
-      "        content: \"\",",
-      "        okText: \"确定\",",
-      "        cancelText: \"取消\",",
-      "        onOk: () => {},",
-      "        onCancel() {",
-      "          console.log(\"Cancel\");",
-      "        }",
-      "      });",
+      "    methods: {",
+      "      // form",
+      "      filterOption(input, option) {",
+      "        return option.componentOptions.children[0].text.toLowerCase().indexOf(input.toLowerCase()) >= 0;",
+      "      },",
+      "      handleSearch(e = \"\", page = 1) {",
+      "        e?.preventDefault?.();",
+      "        this.form.validateFields((error, values) => {",
+      "          values.page = page;",
+      "          this.getList(values);",
+      "        });",
+      "      },",
+      "      handleReset() {",
+      "        this.form.resetFields();",
+      "        this.getList();",
+      "      },",
+      "      // table",
+      "      getList({ page = 1, ...reset } = {}) {",
+      "        // getCircleList({ page, ...reset }).then(res => {",
+      "        //   this.tableData = res.list;",
+      "        //   this.pagination.total = Number(res.count);",
+      "        //   this.pagination.current = res.page;",
+      "        // });",
+      "      },",
+      "      onPageChange(page = this.pagination.current) {",
+      "        this.handleSearch(\"\", page);",
+      "      },",
+      "      // options",
+      "      handleDel(text) {",
+      "        this.\\$confirm({",
+      "          title: \"确定删除该**?\",",
+      "          content: \"\",",
+      "          okText: \"确定\",",
+      "          cancelText: \"取消\",",
+      "          onOk: () => {},",
+      "          onCancel() {",
+      "            console.log(\"Cancel\");",
+      "          }",
+      "        });",
+      "      }",
       "    }",
-      "  }",
-      "};",
+      "  };",
       "</script>",
       "",
       "<style lang=\"scss\" scoped>",
-      ".ant-table td {",
-      "  white-space: nowrap;",
-      "}",
+      "  .ant-table td {",
+      "    white-space: nowrap;",
+      "  }",
       "</style>",
       ""
     ]
@@ -215,7 +224,7 @@
       ""
     ]
   },
-  "Vue Single File Component": {
+  "vbase": {
     "prefix": "vbase",
     "body": [
       "<template>",
@@ -236,7 +245,7 @@
     ],
     "description": "Base for Vue File with SCSS"
   },
-  "Vue Single File Component with SASS": {
+  "vbase-sass": {
     "prefix": "vbase-sass",
     "body": [
       "<template>",
@@ -257,7 +266,7 @@
     ],
     "description": "Base for Vue File with PostCSS"
   },
-  "Vue Single File Component with LESS": {
+  "vbase-less": {
     "prefix": "vbase-less",
     "body": [
       "<template>",
@@ -278,7 +287,7 @@
     ],
     "description": "Base for Vue File with PostCSS"
   },
-  "Vue Single File Component with postcss": {
+  "vbase-pcss": {
     "prefix": "vbase-pcss",
     "body": [
       "<template>",
@@ -299,7 +308,7 @@
     ],
     "description": "Base for Vue File with PostCSS"
   },
-  "Vue Single File Component with Css": {
+  "vbase-css": {
     "prefix": "vbase-css",
     "body": [
       "<template>",
@@ -320,7 +329,7 @@
     ],
     "description": "Base for Vue File with CSS"
   },
-  "Vue Single File Component with Stylus": {
+  "vbase-styl": {
     "prefix": "vbase-styl",
     "body": [
       "<template>",
@@ -341,7 +350,7 @@
     ],
     "description": "Base for Vue File with Stylus"
   },
-  "Vue Single File Component with Typescript": {
+  "vbase-ts": {
     "prefix": "vbase-ts",
     "body": [
       "<template>",
@@ -364,7 +373,7 @@
     ],
     "description": "Base for Vue File with Typescript"
   },
-  "Vue Single File Component with No Style": {
+  "vbase-ns": {
     "prefix": "vbase-ns",
     "body": [
       "<template>",
@@ -381,7 +390,7 @@
     ],
     "description": "Base for Vue File with no styles"
   },
-  "Vue Single File Component Composition API": {
+  "vbase-3": {
     "prefix": "vbase-3",
     "body": [
       "<template>",
@@ -406,7 +415,7 @@
     ],
     "description": "Base for Vue File Composition API with SCSS"
   },
-  "Vue Single File Component Setup Composition API": {
+  "vbase-3-setup": {
     "prefix": "vbase-3-setup",
     "body": [
       "<template>",
@@ -425,7 +434,7 @@
     ],
     "description": "Base for Vue File Setup Composition API with SCSS"
   },
-  "Vue Single File Component Composition API Reactive": {
+  "vbase-3-reactive": {
     "prefix": "vbase-3-reactive",
     "body": [
       "<template>",
@@ -456,7 +465,7 @@
     ],
     "description": "Base for Vue File Composition API with SCSS"
   },
-  "Vue Single File Component Composition API with Typescript": {
+  "vbase-3-ts": {
     "prefix": "vbase-3-ts",
     "body": [
       "<template>",
@@ -482,7 +491,7 @@
     ],
     "description": "Base for Vue File Composition API - Typescript"
   },
-  "Vue Single File Component Setup Composition API with Typescript": {
+  "vbase-3-ts-setup": {
     "prefix": "vbase-3-ts-setup",
     "body": [
       "<template>",
@@ -501,7 +510,7 @@
     ],
     "description": "Base for Vue File Setup Composition API - Typescript"
   },
-  "Vue Single File Component with Class based Typescript format": {
+  "vbase-ts-class": {
     "prefix": "vbase-ts-class",
     "body": [
       "<template>",
@@ -524,5 +533,149 @@
       "</style>"
     ],
     "description": "Base for Vue File with Class based Typescript format"
+  },
+  "vfor": {
+    "prefix": "vfor",
+    "body": [
+      "<${1:div} v-for=\"${2:item} in ${2:item}s\" :key=\"${2:item}.id\">",
+      "\t{{ ${2:item} }}",
+      "</${1:div}>"
+    ],
+    "description": "vfor statement"
+  },
+  "vmodel": {
+    "prefix": "vmodel",
+    "body": [
+      "<input v-model=\"${1:data}\" type=\"text\" />"
+    ],
+    "description": "v-model directive"
+  },
+  "vmodel-num": {
+    "prefix": "vmodel-num",
+    "body": [
+      "<input v-model.number=\"${1:numData}\" type=\"number\" step=\"1\" />"
+    ],
+    "description": "v-model directive number input"
+  },
+  "von": {
+    "prefix": "von",
+    "body": [
+      "@click=\"${1:handler}(${2:arg}, $event)\""
+    ],
+    "description": "v-on click handler with arguments"
+  },
+  "vel-props": {
+    "prefix": "vel-props",
+    "body": [
+      "<${1:component} :${1:propName}=\"${0}\"></${1:component}>"
+    ],
+    "description": "component element with props"
+  },
+  "vslot-named": {
+    "prefix": "vslot-named",
+    "body": [
+      "<template v-slot:${0:name}>${1:defaultcontent}</template>"
+    ],
+    "description": "named slot"
+  },
+  "vsrc": {
+    "prefix": "vsrc",
+    "body": [
+      "<img :src=\"'/path/to/images/' + ${1:fileName}\" alt=\"${2:altText}\"/>"
+    ],
+    "description": "image source binding"
+  },
+  "vstyle": {
+    "prefix": "vstyle",
+    "body": [
+      "<${1:div} :style=\"{ fontSize: ${2:data} + 'px' }\"></${1:div}>"
+    ],
+    "description": "vue inline style binding"
+  },
+  "vstyle-obj": {
+    "prefix": "vstyle-obj",
+    "body": [
+      "<${1:div} :style=\"[${2:styleObjectA}, ${3:styleObjectB]}\"></${1:div}>"
+    ],
+    "description": "vue inline style binding, objects"
+  },
+  "vclass": {
+    "prefix": "vclass",
+    "body": [
+      "<${1:div} :class=\"{ ${2:className}: ${3:data} }\"></${1:div}>"
+    ],
+    "description": "vue class binding"
+  },
+  "vclass-obj": {
+    "prefix": "vclass-obj",
+    "body": [
+      "<${1:div} :class=\"[${2:classNameA}, ${3:classNameB}]\"></${1:div}>"
+    ],
+    "description": "vue class binding"
+  },
+  "vclass-obj-mult": {
+    "prefix": "vclass-obj-mult",
+    "body": [
+      "<${1:div} :class=\"[${2:classNameA}, {${3:classNameB} : ${4:condition}}]\"></${1:div}>"
+    ],
+    "description": "vue multiple conditional class bindings"
+  },
+  "vemit-child": {
+    "prefix": "vemit-child",
+    "body": [
+      "@change=\"$$emit('change', $$event.target.value)\""
+    ],
+    "description": "Vue Emit from Child Component"
+  },
+  "vemit-parent": {
+    "prefix": "vemit-parent",
+    "body": [
+      "@change=\"${1:foo} = $$event\""
+    ],
+    "description": "Vue Emit to Parent Component"
+  },
+  "vanim": {
+    "prefix": "vanim",
+    "body": [
+      "<transition",
+      "\tmode=\"out-in\"",
+      "\t@before-enter=\"beforeEnter\"",
+      "\t@enter=\"enter\"",
+      "",
+      "\t@before-leave=\"beforeLeave\"",
+      "\t@leave=\"leave\"",
+      "\t:css=\"false\">",
+      "",
+      "</transition>"
+    ],
+    "description": "transition component js hooks"
+  },
+  "vnuxtl": {
+    "prefix": "vnuxtl",
+    "body": [
+      "<nuxt-link to=\"/${1:page}\">${1:page}</nuxt-link>"
+    ],
+    "description": "nuxt routing link"
+  },
+  "vroutename": {
+    "prefix": "vroutename",
+    "body": [
+      "<router-link :to=\"{name: '${1:name}'}\">${2:LinkTitle}</router-link>"
+    ],
+    "description": "Named routing link"
+  },
+  "vroutenameparam": {
+    "prefix": "vroutenameparam",
+    "body": [
+      "<router-link :to=\"{name: '${1:name}', params:{${2:id}: '${3:value}'} }\">${4:LinkTitle}</router-link>"
+    ],
+    "description": "Named routing link w/ params"
+  },
+  "vroutepath": {
+    "prefix": "vroutepath",
+    "body": [
+      "<router-link to=\"${1:path}\">${2:LinkTitle}</router-link>"
+    ],
+    "description": "Path routing link"
   }
 }
