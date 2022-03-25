@@ -81,7 +81,28 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-cmdline" -- cmdline completions
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
   use "hrsh7th/cmp-nvim-lsp"
+  use "hrsh7th/cmp-emoji"
   use "hrsh7th/cmp-nvim-lua"
+  use {
+    "tzachar/cmp-tabnine",
+    config = function()
+      local tabnine = require "cmp_tabnine.config"
+      tabnine:setup {
+        max_lines = 1000,
+        max_num_results = 20,
+        sort = true,
+        run_on_every_keystroke = true,
+        snippet_placeholder = "..",
+        ignored_file_types = { -- default is not to ignore
+          -- uncomment to ignore in lua:
+          -- lua = true
+        },
+      }
+    end,
+
+    run = "./install.sh",
+    requires = "hrsh7th/nvim-cmp",
+  }
 
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
@@ -102,6 +123,7 @@ return packer.startup(function(use)
   }
   use "github/copilot.vim"
   use "RRethy/vim-illuminate"
+  use "SmiteshP/nvim-gps"
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
@@ -152,6 +174,8 @@ return packer.startup(function(use)
 
   -- marks
   use { "chentau/marks.nvim" }
+
+  use "folke/todo-comments.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
