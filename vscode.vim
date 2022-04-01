@@ -4,14 +4,16 @@ map L $
 map H ^
 
 omap ai aI
+omap iq i"
+omap aq a"
 
 noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 
-inoremap <C-e> <ESC>A
-inoremap <C-a> <ESC>I
+inoremap <C-e> <C-o>$
+inoremap <C-a> <C-o>^
 
 noremap <C-U> Hzz
 noremap <C-d> Lzz

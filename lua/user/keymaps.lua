@@ -68,12 +68,13 @@ keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- subversive
-keymap("", "s", "<nop>", opts)
-keymap("n", "s", "<plug>(SubversiveSubstitute)", term_opts)
-keymap("v", "s", "<plug>(SubversiveSubstitute)", term_opts)
-keymap("n", "S", "<plug>(SubversiveSubstituteLine)", term_opts)
+-- keymap("", "s", "<nop>", opts)
+-- Substitute
+vim.api.nvim_set_keymap("n", "s", "<cmd>lua require('substitute').operator()<cr>", { noremap = true })
+vim.api.nvim_set_keymap("n", "ss", "<cmd>lua require('substitute').line()<cr>", { noremap = true })
+vim.api.nvim_set_keymap("n", "S", "<cmd>lua require('substitute').eol()<cr>", { noremap = true })
+vim.api.nvim_set_keymap("x", "s", "<cmd>lua require('substitute').visual()<cr>", { noremap = true })
 
-keymap("", "<C-m>", "%", opts)
 
 -- Terminal --
 -- Better terminal navigation
@@ -111,7 +112,7 @@ keymap(
 keymap("n", "<C-t>", "<cmd>lua vim.lsp.buf.document_symbol()<cr>", opts)
 keymap("n", "<C-s>", "<cmd>vsplit<cr>", opts)
 keymap("n", "<C-z>", "<cmd>ZenMode<cr>", opts)
-keymap("n", "<c-n>", ":e ~/Notes/<cr>", opts)
+-- keymap("n", "<c-n>", ":e ~/Notes/<cr>", opts)
 -- keymap("n", "<C-\\>", "<cmd>vsplit<cr>", opts)
 -- vim.cmd[[nnoremap c* /\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgn]]
 -- vim.cmd[[nnoremap c# ?\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgN]]
@@ -121,3 +122,6 @@ keymap("n", "<c-n>", ":e ~/Notes/<cr>", opts)
 keymap("n", "gx", [[:silent execute '!$BROWSER ' . shellescape(expand('<cfile>'), 1)<CR>]], opts)
 -- Change '<CR>' to whatever shortcut you like :)
 vim.api.nvim_set_keymap('n', '<CR>', '<cmd>NeoZoomToggle<CR>', { noremap=true, silent=true, nowait=true })
+
+keymap("i", "<C-e>", "<C-o>$", opts)
+-- keymap("n", "<C-m>", "%", opts)

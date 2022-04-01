@@ -1,0 +1,93 @@
+{
+  "wehchatPage": {
+    "displayName": "wehchatPage",
+    "folder": "{{kebab name}}",
+    "defaultPath": "",
+    "questions": {
+      "name": "Page name",
+      "fileName": "File name"
+    },
+    "files": [
+      {
+        "name": "{{kebab fileName}}.wxml",
+        "open": true,
+        "content": ["// {{kebab fileName}}.wxml"]
+      },
+      {
+        "name": "{{kebab fileName}}.js",
+        "content": [
+          "const app = getApp()",
+          "Page({\r",
+          "  data: {},\r",
+          "  onLoad() {},\r",
+          "  onShow() {},\r",
+          "  onHide() {},\r",
+          "  onReachBottom() {},\r",
+          "  onShareAppMessage() {},\r",
+          "  onShareTimeline() {},\r",
+          "});\r",
+          ""
+        ]
+      },
+      {
+        "name": "{{kebab fileName}}.scss",
+        "content": ["// {{kebab fileName}}.scss"]
+      },
+      {
+        "name": "{{kebab fileName}}.json",
+        "content": ["{", "\"usingComponents\":{} ", "}"]
+      }
+    ]
+  },
+  "wehchatComponents": {
+    "displayName": "wehchatComponents",
+    "defaultPath": "components",
+    "folder": "{{kebab name}}",
+    "questions": {
+      "name": "Page name",
+      "fileName": "File name"
+    },
+    "files": [
+      {
+        "name": "{{kebab fileName}}.wxml",
+        "open": true,
+        "content": ["// {{kebab fileName}}.wxml"]
+      },
+      {
+        "name": "{{kebab fileName}}.js",
+        "content": [
+          "const app = getApp()",
+          "Component({\r",
+          "  behaviors: ['wx://form-field'],\r",
+          "  externalClasses: ['my-class'],\r",
+          "  properties: {},\r",
+          "  observers: {},\r",
+          "  relations: {},\r",
+          "  data: {},\r",
+          "  lifetimes: {\r",
+          "    created() {},\r",
+          "    attached() {},\r",
+          "    detached() {},\r",
+          "    error() {},\r",
+          "  },\r",
+          "  pageLifetimes: {\r",
+          "    show() {},\r",
+          "    hide() {},\r",
+          "    resize() {},\r",
+          "  },\r",
+          "  methods: {},\r",
+          "});\r",
+          ""
+        ]
+      },
+      {
+        "name": "{{kebab fileName}}.scss",
+        "content": ["// {{kebab fileName}}.scss"]
+      },
+      {
+        "name": "{{kebab fileName}}.json",
+        "content": ["{", "\"component\":true,", "\"usingComponents\":{} ", "}"]
+      }
+    ]
+  }
+}

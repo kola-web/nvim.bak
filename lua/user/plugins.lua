@@ -151,7 +151,8 @@ return packer.startup(function(use)
 
   -- operators
   use { "mg979/vim-visual-multi" }
-  use { "svermeulen/vim-subversive" }
+  -- use { "svermeulen/vim-subversive" }
+  use { "gbprod/substitute.nvim" }
   use { "kola-web/vim-indent-object" }
   use { "kana/vim-textobj-user" }
   use { "whatyouhide/vim-textobj-xmlattr" }
@@ -159,7 +160,9 @@ return packer.startup(function(use)
   use { "wellle/targets.vim" }
   use { "tpope/vim-repeat" }
   use { "tpope/vim-surround" }
+
   use { "andymass/vim-matchup" }
+
   use { "windwp/nvim-spectre" }
   use { "norcalli/nvim-colorizer.lua" }
 
@@ -177,9 +180,12 @@ return packer.startup(function(use)
 
   use "folke/todo-comments.nvim"
 
+  use "nyngwang/NeoZoom.lua"
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
 end)
+
