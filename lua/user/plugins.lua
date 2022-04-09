@@ -56,7 +56,6 @@ return packer.startup(function(use)
   use "lewis6991/impatient.nvim"
   use "lukas-reineke/indent-blankline.nvim"
   use "goolord/alpha-nvim"
-  use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   use "unblevable/quick-scope"
   use "nacro90/numb.nvim"
   use "folke/zen-mode.nvim"
@@ -83,26 +82,26 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-emoji"
   use "hrsh7th/cmp-nvim-lua"
-  use {
-    "tzachar/cmp-tabnine",
-    config = function()
-      local tabnine = require "cmp_tabnine.config"
-      tabnine:setup {
-        max_lines = 1000,
-        max_num_results = 20,
-        sort = true,
-        run_on_every_keystroke = true,
-        snippet_placeholder = "..",
-        ignored_file_types = { -- default is not to ignore
-          -- uncomment to ignore in lua:
-          -- lua = true
-        },
-      }
-    end,
-
-    run = "./install.sh",
-    requires = "hrsh7th/nvim-cmp",
-  }
+  -- use {
+  --   "tzachar/cmp-tabnine",
+  --   config = function()
+  --     local tabnine = require "cmp_tabnine.config"
+  --     tabnine:setup {
+  --       max_lines = 1000,
+  --       max_num_results = 20,
+  --       sort = true,
+  --       run_on_every_keystroke = true,
+  --       snippet_placeholder = "..",
+  --       ignored_file_types = { -- default is not to ignore
+  --         -- uncomment to ignore in lua:
+  --         -- lua = true
+  --       },
+  --     }
+  --   end,
+  --
+  --   run = "./install.sh",
+  --   requires = "hrsh7th/nvim-cmp",
+  -- }
 
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
@@ -117,10 +116,7 @@ return packer.startup(function(use)
   use "simrat39/symbols-outline.nvim"
   use "ray-x/lsp_signature.nvim"
   use "b0o/SchemaStore.nvim"
-  use {
-    "folke/trouble.nvim",
-    cmd = "TroubleToggle",
-  }
+  use { "folke/trouble.nvim" }
   use "github/copilot.vim"
   use "RRethy/vim-illuminate"
   use "SmiteshP/nvim-gps"
@@ -178,9 +174,15 @@ return packer.startup(function(use)
   -- marks
   use { "chentau/marks.nvim" }
 
+  -- 注释
   use "folke/todo-comments.nvim"
 
-  use "nyngwang/NeoZoom.lua"
+  -- 平滑滚动
+  use "karb94/neoscroll.nvim"
+
+  -- 代码运行
+  use { 'michaelb/sniprun', run = 'bash ./install.sh'}
+
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
@@ -188,4 +190,3 @@ return packer.startup(function(use)
     require("packer").sync()
   end
 end)
-

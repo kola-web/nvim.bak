@@ -28,7 +28,7 @@ noremap K :vsc editor.action.showHover<CR>
 " noremap <S-tab> :vsc workbench.action.previousEditor<CR>
 
 " 多光标
-noremap <C-n>  editor.action.addSelectionToNextFindMatch
+" noremap <C-b>  editor.action.addSelectionToNextFindMatch
 vnoremap <C-x>  editor.action.moveSelectionToNextFindMatch
 
 " fold
