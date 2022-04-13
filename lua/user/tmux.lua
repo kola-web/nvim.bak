@@ -11,6 +11,6 @@ tmux.setup {
     enable_default_keybindings = true,
   },
   resize = {
-    enable_default_keybindings = false,
+    enable_default_keybindings = true,
   },
 }

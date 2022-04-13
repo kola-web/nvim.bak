@@ -41,15 +41,14 @@ packer.init {
 -- Install your plugins here
 return packer.startup(function(use)
   -- My plugins here
+  use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
-  use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use "numToStr/Comment.nvim" -- Easily comment stuff
   use "kyazdani42/nvim-web-devicons"
   use "kyazdani42/nvim-tree.lua"
   use "akinsho/bufferline.nvim"
-  use "moll/vim-bbye"
   use "nvim-lualine/lualine.nvim"
   use "akinsho/toggleterm.nvim"
   use "ahmedkhalf/project.nvim"
@@ -62,9 +61,7 @@ return packer.startup(function(use)
   use "folke/which-key.nvim"
 
   -- Colorschemes
-  -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
-  use "norcalli/nvim-base16.lua"
-  use "lunarvim/darkplus.nvim"
+  -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out use "lunarvim/darkplus.nvim"
   use "sainnhe/gruvbox-material"
   use "rebelot/kanagawa.nvim"
   use "folke/tokyonight.nvim"
@@ -147,7 +144,6 @@ return packer.startup(function(use)
 
   -- operators
   use { "mg979/vim-visual-multi" }
-  -- use { "svermeulen/vim-subversive" }
   use { "gbprod/substitute.nvim" }
   use { "kola-web/vim-indent-object" }
   use { "kana/vim-textobj-user" }
@@ -157,7 +153,10 @@ return packer.startup(function(use)
   use { "tpope/vim-repeat" }
   use { "tpope/vim-surround" }
 
-  use { "andymass/vim-matchup" }
+  use {
+    "andymass/vim-matchup",
+    event = "CursorMoved",
+  }
 
   use { "windwp/nvim-spectre" }
   use { "norcalli/nvim-colorizer.lua" }
@@ -169,7 +168,14 @@ return packer.startup(function(use)
   use { "nathom/filetype.nvim" }
 
   -- markdown
-  use { "iamcco/markdown-preview.nvim" }
+  use {
+    "iamcco/markdown-preview.nvim",
+    run = "cd app && npm install",
+    setup = function()
+      vim.g.mkdp_filetypes = { "markdown" }
+    end,
+    ft = { "markdown" },
+  }
 
   -- marks
   use { "chentau/marks.nvim" }
@@ -177,12 +183,8 @@ return packer.startup(function(use)
   -- 注释
   use "folke/todo-comments.nvim"
 
-  -- 平滑滚动
-  use "karb94/neoscroll.nvim"
-
   -- 代码运行
-  use { 'michaelb/sniprun', run = 'bash ./install.sh'}
-
+  use { "michaelb/sniprun", run = "bash ./install.sh" }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
