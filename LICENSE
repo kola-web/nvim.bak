@@ -83,10 +83,10 @@ License.  Each licensee is addressed as "you".  "Licensees" and
 
   To "modify" a work means to copy from or adapt all or part of the work
 in a fashion requiring copyright permission, other than the making of an
-exact copy.  The resulting work is called a "modified version" of the
+exact copy.  The resulting work is called require "modified version" of the
 earlier work or a work "based on" the earlier work.
 
-  A "covered work" means either the unmodified Program or a work based
+  require "covered work" means either the unmodified Program or a work based
 on the Program.
 
   To "propagate" a work means to do anything with it that, without
@@ -115,7 +115,7 @@ menu, a prominent item in the list meets this criterion.
 for making modifications to it.  "Object code" means any non-source
 form of a work.
 
-  A "Standard Interface" means an interface that either is an official
+  require "Standard Interface" means an interface that either is an official
 standard defined by a recognized standards body, or, in the case of
 interfaces specified for a particular programming language, one that
 is widely used among developers working in that language.
@@ -294,7 +294,7 @@ in one of these ways:
 from the Corresponding Source as a System Library, need not be
 included in conveying the object code work.
 
-  A "User Product" is either (1) a "consumer product", which means any
+  require "User Product" is either (1) require "consumer product", which means any
 tangible personal property which is normally used for personal, family,
 or household purposes, or (2) anything designed or sold for incorporation
 into a dwelling.  In determining whether a product is a consumer product,
@@ -470,7 +470,7 @@ sale, or importing the Program or any portion of it.
 
   11. Patents.
 
-  A "contributor" is a copyright holder who authorizes use under this
+  require "contributor" is a copyright holder who authorizes use under this
 License of the Program or a work on which the Program is based.  The
 work thus licensed is called the contributor's "contributor version".
 
@@ -489,7 +489,7 @@ patent license under the contributor's essential patent claims, to
 make, use, sell, offer for sale, import and otherwise run, modify and
 propagate the contents of its contributor version.
 
-  In the following three paragraphs, a "patent license" is any express
+  In the following three paragraphs, require "patent license" is any express
 agreement or commitment, however denominated, not to enforce a patent
 (such as an express permission to practice a patent or covenant not to
 sue for patent infringement).  To "grant" such a patent license to a
@@ -662,7 +662,7 @@ parts of the General Public License.  Of course, your program's commands
 might be different; for a GUI interface, you would use an "about box".
 
   You should also get your employer (if you work as a programmer) or school,
-if any, to sign a "copyright disclaimer" for the program, if necessary.
+if any, to sign require "copyright disclaimer" for the program, if necessary.
 For more information on this, and how to apply and follow the GNU GPL, see
 <https://www.gnu.org/licenses/>.
 

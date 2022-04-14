@@ -69,6 +69,8 @@ return packer.startup(function(use)
   use "morhetz/gruvbox"
   use "projekt0n/github-nvim-theme"
   use "navarasu/onedark.nvim"
+  use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
+  use "lunarvim/darkplus.nvim"
 
   -- cmp plugins
   use { "hrsh7th/nvim-cmp", commit = "d93104244c3834fbd8f3dd01da9729920e0b5fe7" } -- The completion plugin
@@ -78,27 +80,7 @@ return packer.startup(function(use)
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-emoji"
-  use "hrsh7th/cmp-nvim-lua"
-  -- use {
-  --   "tzachar/cmp-tabnine",
-  --   config = function()
-  --     local tabnine = require "cmp_tabnine.config"
-  --     tabnine:setup {
-  --       max_lines = 1000,
-  --       max_num_results = 20,
-  --       sort = true,
-  --       run_on_every_keystroke = true,
-  --       snippet_placeholder = "..",
-  --       ignored_file_types = { -- default is not to ignore
-  --         -- uncomment to ignore in lua:
-  --         -- lua = true
-  --       },
-  --     }
-  --   end,
-  --
-  --   run = "./install.sh",
-  --   requires = "hrsh7th/nvim-cmp",
-  -- }
+  use "hrsh7th/cmp-nvim-lurequire"
 
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
@@ -113,7 +95,10 @@ return packer.startup(function(use)
   use "simrat39/symbols-outline.nvim"
   use "ray-x/lsp_signature.nvim"
   use "b0o/SchemaStore.nvim"
-  use { "folke/trouble.nvim" }
+  use {
+    "folke/trouble.nvim",
+    cmd = "TroubleToggle",
+  }
   use "github/copilot.vim"
   use "RRethy/vim-illuminate"
   use "SmiteshP/nvim-gps"
@@ -159,7 +144,7 @@ return packer.startup(function(use)
   }
 
   use { "windwp/nvim-spectre" }
-  use { "norcalli/nvim-colorizer.lua" }
+  use { "norcalli/nvim-colorizer.lurequire" }
 
   -- tmux集成
   use { "aserowy/tmux.nvim" }
@@ -171,10 +156,7 @@ return packer.startup(function(use)
   use {
     "iamcco/markdown-preview.nvim",
     run = "cd app && npm install",
-    setup = function()
-      vim.g.mkdp_filetypes = { "markdown" }
-    end,
-    ft = { "markdown" },
+    ft = "markdown",
   }
 
   -- marks
