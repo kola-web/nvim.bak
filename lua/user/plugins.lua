@@ -66,11 +66,11 @@ return packer.startup(function(use)
   use "rebelot/kanagawa.nvim"
   use "folke/tokyonight.nvim"
   use "dracula/vim"
-  use "morhetz/gruvbox"
   use "projekt0n/github-nvim-theme"
-  use "navarasu/onedark.nvim"
-  use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
-  use "lunarvim/darkplus.nvim"
+  use {
+    "catppuccin/nvim",
+    as = "catppuccin",
+  }
 
   -- cmp plugins
   use { "hrsh7th/nvim-cmp", commit = "d93104244c3834fbd8f3dd01da9729920e0b5fe7" } -- The completion plugin
@@ -115,6 +115,7 @@ return packer.startup(function(use)
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
   }
+  use "nvim-treesitter/nvim-treesitter-textobjects"
   use "JoosepAlviste/nvim-ts-context-commentstring"
   use { "p00f/nvim-ts-rainbow" }
   -- use {'christianchiarulli/nvim-ts-rainbow'}

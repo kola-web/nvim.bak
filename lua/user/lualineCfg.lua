@@ -84,7 +84,7 @@ vim.opt.laststatus = 3
 lualine.setup {
   options = {
     icons_enabled = true,
-    theme = "auto",
+    theme = "gruvbox_dark",
     component_separators = { left = "", right = "" },
     section_separators = { left = "", right = "" },
     -- disabled_filetypes = { "alphrequire", "dashboard", "NvimTree", "Outline", "toggleterm" },
