@@ -13,7 +13,7 @@ filetype.setup {
     },
     literal = {
       --将名为 "MyBackupFile" 的文件的文件类型设置为 lua
-      MyBackupFile = "lurequire",
+      MyBackupFile = "lua",
     },
     complex = {
       -- Set the filetype of any full filename matching the regex to gitconfig

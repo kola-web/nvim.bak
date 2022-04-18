@@ -7,7 +7,7 @@
   "contributes": {
     "snippets": [
       {
-        "language": "lurequire",
+        "language": "lua",
         "path": "./lua.json"
       },
       {

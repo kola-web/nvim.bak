@@ -38,7 +38,6 @@ local options = {
   guifont = "monospace:h17",               -- the font used in graphical neovim applications
   foldmethod = "indent",
   foldlevel = 99,
-
 }
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1

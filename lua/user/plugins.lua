@@ -41,9 +41,9 @@ packer.init {
 -- Install your plugins here
 return packer.startup(function(use)
   -- My plugins here
-  use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
+  use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use "numToStr/Comment.nvim" -- Easily comment stuff
   use "kyazdani42/nvim-web-devicons"
@@ -66,6 +66,7 @@ return packer.startup(function(use)
   use "rebelot/kanagawa.nvim"
   use "folke/tokyonight.nvim"
   use "dracula/vim"
+  use "christianchiarulli/nvcode-color-schemes.vim"
   use "projekt0n/github-nvim-theme"
   use {
     "catppuccin/nvim",
@@ -80,7 +81,8 @@ return packer.startup(function(use)
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-emoji"
-  use "hrsh7th/cmp-nvim-lurequire"
+  use "hrsh7th/cmp-nvim-lua"
+  use "hrsh7th/cmp-copilot"
 
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
@@ -145,7 +147,7 @@ return packer.startup(function(use)
   }
 
   use { "windwp/nvim-spectre" }
-  use { "norcalli/nvim-colorizer.lurequire" }
+  use { "norcalli/nvim-colorizer.lua" }
 
   -- tmux集成
   use { "aserowy/tmux.nvim" }

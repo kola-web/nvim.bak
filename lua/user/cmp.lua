@@ -33,6 +33,13 @@ cmp.setup {
     ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
     ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
     -- ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
+    ["<C-g>"] = cmp.mapping(function(fallback)
+      vim.api.nvim_feedkeys(
+        vim.fn["copilot#Accept"](vim.api.nvim_replace_termcodes("<Tab>", true, true, true)),
+        "n",
+        true
+      )
+    end),
     ["<C-e>"] = cmp.mapping {
       i = cmp.mapping.abort(),
       c = cmp.mapping.close(),
@@ -78,19 +85,19 @@ cmp.setup {
       -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
       -- NOTE: order matters
       vim_item.menu = ({
-        -- nvim_lsp = "[LSP]",
-        -- nvim_lua = "[Nvim]",
-        -- luasnip = "[Snippet]",
-        -- buffer = "[Buffer]",
-        -- path = "[Path]",
-        -- emoji = "[Emoji]",
+        nvim_lsp = "[LSP]",
+        nvim_lua = "[Nvim]",
+        luasnip = "[Snippet]",
+        buffer = "[Buffer]",
+        path = "[Path]",
+        emoji = "[Emoji]",
 
-        nvim_lsp = "",
-        nvim_lua = "",
-        luasnip = "",
-        buffer = "",
-        path = "",
-        emoji = "",
+        -- nvim_lsp = "",
+        -- nvim_lua = "",
+        -- luasnip = "",
+        -- buffer = "",
+        -- path = "",
+        -- emoji = "",
       })[entry.source.name]
       return vim_item
     end,
@@ -108,11 +115,17 @@ cmp.setup {
     select = false,
   },
   -- documentation = true,
-  documentation = {
-    border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+  window = {
+    -- documentation = "native",
+    documentation = {
+      border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+    },
   },
+  -- documentation = {
+  -- 	border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+  -- },
   experimental = {
-    ghost_text = true,
-    native_menu = false,
+    ghost_text = false,
+    -- native_menu = false,
   },
 }
