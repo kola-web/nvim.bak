@@ -80,7 +80,7 @@ return packer.startup(function(use)
   }
 
   -- cmp plugins
-  use { "hrsh7th/nvim-cmp", commit = "d93104244c3834fbd8f3dd01da9729920e0b5fe7" } -- The completion plugin
+  use { "hrsh7th/nvim-cmp" } -- The completion plugin
   use "hrsh7th/cmp-buffer" -- buffer completions
   use "hrsh7th/cmp-path" -- path completions
   use "hrsh7th/cmp-cmdline" -- cmdline completions
@@ -103,10 +103,7 @@ return packer.startup(function(use)
   use "simrat39/symbols-outline.nvim"
   use "ray-x/lsp_signature.nvim"
   use "b0o/SchemaStore.nvim"
-  use {
-    "folke/trouble.nvim",
-    cmd = "TroubleToggle",
-  }
+  use "folke/trouble.nvim"
   use "github/copilot.vim"
   use "RRethy/vim-illuminate"
   use "SmiteshP/nvim-gps"

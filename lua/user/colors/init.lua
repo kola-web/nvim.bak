@@ -5,6 +5,7 @@
 -- local colorscheme = "github_*"
 -- local colorscheme = "swcatppuccin"
 local colorscheme = "gruvbox"
+-- local colorscheme = "nvcode"
 
 vim.g.nvcode_termcolors = 256
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)

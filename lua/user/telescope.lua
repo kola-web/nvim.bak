@@ -19,9 +19,9 @@ telescope.setup {
       "--smart-case",
     },
 
-    prompt_prefix = "   ",
-    selection_caret = "  ",
-    entry_prefix = "  ",
+    prompt_prefix = "",
+    selection_caret = "",
+    entry_prefix = "",
     path_display = { "smart" },
     borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
 
