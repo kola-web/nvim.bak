@@ -15,13 +15,7 @@ null_ls.setup {
   sources = {
     formatting.prettier.with {
       extra_filetypes = { "toml", "solidity" },
-      extra_args = {
-        "--print-width 120",
-        "--tab-width 2",
-        "--html-whitespace-sensitivity ignore",
-        "--vue-indent-script-and-style true",
-        "--trailing-comma all",
-      },
+      extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
     },
     formatting.black.with { extra_args = { "--fast" } },
     formatting.stylua,

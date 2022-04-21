@@ -4,8 +4,6 @@ if not status_ok then
 end
 
 local actions = require "telescope.actions"
-telescope.load_extension "media_files"
-local icons = require "user.icons"
 
 telescope.setup {
   defaults = {
@@ -17,13 +15,22 @@ telescope.setup {
       "--line-number",
       "--column",
       "--smart-case",
+      "--trim", -- add this value
     },
 
     prompt_prefix = "",
     selection_caret = "",
     entry_prefix = "",
     path_display = { "smart" },
-    borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+    file_ignore_patterns = {
+      "node_modules",
+      ".work/.*",
+      ".cache/.*",
+      ".idea/.*",
+      "dist/.*",
+      ".git/.*",
+      ".yarn/.*",
+    },
 
     mappings = {
       i = {
@@ -100,36 +107,22 @@ telescope.setup {
       -- builtin picker
     },
     extensions = {
-      media_files = {
-        -- filetypes whitelist
-        -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
-        filetypes = { "png", "webp", "jpg", "jpeg" },
-        find_cmd = "rg", -- find command (defaults to `fd`)
+      fzf = {
+        fuzzy = true, -- false will only do exact matching
+        override_generic_sorter = true, -- override the generic sorter
+        override_file_sorter = true, -- override the file sorter
+        case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+        -- the default case_mode is "smart_case"
       },
-      file_browser = {
-        -- theme = "ivy",
-        -- require("telescope.themes").get_dropdown {
-        --   previewer = false,
-        --   -- even more opts
-        -- },
-        mappings = {
-          ["i"] = {
-            -- your custom insert mode mappings
-          },
-          ["n"] = {
-            -- your custom normal mode mappings
-          },
+      ["ui-select"] = {
+        require("telescope.themes").get_dropdown {
+          -- previewer = false,
+          -- even more opts
         },
       },
-      -- ["ui-select"] = {
-      --   require("telescope.themes").get_dropdown {
-      --     previewer = false,
-      --     -- even more opts
-      --   },
-      -- },
     },
   },
 }
 
--- telescope.load_extension "ui-select"
-telescope.load_extension "file_browser"
+telescope.load_extension "fzf"
+telescope.load_extension "ui-select"

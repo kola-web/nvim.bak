@@ -55,6 +55,7 @@ return packer.startup(function(use)
   use "kyazdani42/nvim-web-devicons"
   use "kyazdani42/nvim-tree.lua"
   use "akinsho/bufferline.nvim"
+  use "moll/vim-bbye"
   use "nvim-lualine/lualine.nvim"
   use "akinsho/toggleterm.nvim"
   use "ahmedkhalf/project.nvim"
@@ -68,16 +69,9 @@ return packer.startup(function(use)
 
   -- Colorschemes
   -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out use "lunarvim/darkplus.nvim"
-  use "sainnhe/gruvbox-material"
-  use "rebelot/kanagawa.nvim"
   use "folke/tokyonight.nvim"
-  use "dracula/vim"
   use "christianchiarulli/nvcode-color-schemes.vim"
-  use "projekt0n/github-nvim-theme"
-  use {
-    "catppuccin/nvim",
-    as = "catppuccin",
-  }
+  use "lunarvim/darkplus.nvim"
 
   -- cmp plugins
   use { "hrsh7th/nvim-cmp" } -- The completion plugin
@@ -110,10 +104,8 @@ return packer.startup(function(use)
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
-  use "tom-anders/telescope-vim-bookmarks.nvim"
-  use "nvim-telescope/telescope-media-files.nvim"
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   use "nvim-telescope/telescope-ui-select.nvim"
-  use "nvim-telescope/telescope-file-browser.nvim"
 
   -- Treesitter
   use {

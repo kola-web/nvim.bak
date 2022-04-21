@@ -1,4 +1,8 @@
-vim.g.copilot_no_tab_map = true
+vim.g.copilot_filetypes = {
+  ["*"] = false,
+}
+
 vim.cmd [[
-  imap <expr> <Plug>(vimrc:copilot-dummy-map) copilot#Accept("\<Tab>")
+  imap <silent><script><expr> <C-A> copilot#Accept("\<CR>")
+  let g:copilot_no_tab_map = v:true
 ]]
