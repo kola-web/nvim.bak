@@ -1,5 +1,6 @@
 map s gr
-nmap S grr
+nmap ss grr
+map S gr$
 map L $
 map H ^
 

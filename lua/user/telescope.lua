@@ -7,17 +7,6 @@ local actions = require "telescope.actions"
 
 telescope.setup {
   defaults = {
-    vimgrep_arguments = {
-      "rg",
-      "--color=never",
-      "--no-heading",
-      "--with-filename",
-      "--line-number",
-      "--column",
-      "--smart-case",
-      "--trim", -- add this value
-    },
-
     prompt_prefix = "",
     selection_caret = "",
     entry_prefix = "",
@@ -29,7 +18,8 @@ telescope.setup {
       ".idea/.*",
       "dist/.*",
       ".git/.*",
-      ".yarn/.*",
+      ".yarn",
+      ".vscode",
     },
 
     mappings = {
@@ -97,23 +87,8 @@ telescope.setup {
         ["?"] = actions.which_key,
       },
     },
-    pickers = {
-      -- Default configuration for builtin pickers goes here:
-      -- picker_name = {
-      --   picker_config_key = value,
-      --   ...
-      -- }
-      -- Now the picker_config_key will be applied every time you call this
-      -- builtin picker
-    },
+    pickers = {},
     extensions = {
-      fzf = {
-        fuzzy = true, -- false will only do exact matching
-        override_generic_sorter = true, -- override the generic sorter
-        override_file_sorter = true, -- override the file sorter
-        case_mode = "smart_case", -- or "ignore_case" or "respect_case"
-        -- the default case_mode is "smart_case"
-      },
       ["ui-select"] = {
         require("telescope.themes").get_dropdown {
           -- previewer = false,
@@ -124,5 +99,4 @@ telescope.setup {
   },
 }
 
-telescope.load_extension "fzf"
 telescope.load_extension "ui-select"
