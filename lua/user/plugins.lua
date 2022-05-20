@@ -72,6 +72,7 @@ return packer.startup(function(use)
   use "folke/tokyonight.nvim"
   use "christianchiarulli/nvcode-color-schemes.vim"
   use "lunarvim/darkplus.nvim"
+  use "EdenEast/nightfox.nvim" -- PackerJ
 
   -- cmp plugins
   use { "hrsh7th/nvim-cmp" } -- The completion plugin

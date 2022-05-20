@@ -81,7 +81,7 @@ end
 M.on_attach = function(client, bufnr)
   -- vim.notify(client.name .. " starting...")
   -- TODO: refactor this into a method that checks if string in list
-  if client.name == "tsserver" or client.name == "html" or client.name == "jdt.ls" then
+  if client.name == "tsserver" or client.name == "html" or client.name == "jdt.ls" or client.name == "volar" then
     client.resolved_capabilities.document_formatting = false
   end
 

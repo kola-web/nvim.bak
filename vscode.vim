@@ -5,8 +5,10 @@ map L $
 map H ^
 
 omap ai aI
-omap iq i"
-omap aq require"
+onoremap iq i"
+onoremap aq a"
+onoremap iQ i'
+onoremap aQ a'
 
 noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
