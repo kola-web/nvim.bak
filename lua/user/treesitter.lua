@@ -6,7 +6,7 @@ end
 configs.setup {
   ensure_installed = { "html", "css", "javascript", "typescript", "vue" },
   sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
-  ignore_install = { "" }, -- List of parsers to ignore installing
+  ignore_install = { "cc", "gcc", "clang", "cl", "zig" }, -- List of parsers to ignore installing
   highlight = {
     -- use_languagetree = true,
     enable = true, -- false will disable the whole extension
