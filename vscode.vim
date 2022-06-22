@@ -45,19 +45,24 @@ noremap z7 editor.foldLevel7
 noremap zj editor.gotoNextFold
 noremap zk editor.gotoPreviousFold
 noremap zp :vsc dakara-foldplus.cursor.exclude<cr>
-noremap zl :vsc dakara-foldplus.levelAtCursor<cr>
+noremap zm :vsc dakara-foldplus.levelAtCursor<cr>
 
 noremap zp editor.gotoParentFold
 noremap <space> :vsc whichkey.show<CR>
 
 noremap <C-m> :vsc workbench.action.minimizeOtherEditors<CR>
 
+noremap gB :vsc selectAllSearchEditorMatches<CR>
 noremap ga :vsc extension.alignTokens<CR>
 " 打开侧边定义
+noremap gi :vsc editor.action.goToImplementation<CR>
+noremap gd :vsc editor.action.goToDeclaration<CR>
 noremap gD :vsc editor.action.revealDefinitionAside<CR>
-noremap W :vsc argwrap.toggle<CR>
+noremap gp :vsc references-view.showSupertypes<CR>
 
-" noremap w <leader>w
-" noremap e <leader>e
-" noremap b <leader>b
+
+
+noremap W <leader>w
+noremap E <leader>e
+noremap B <leader>b
 " omap aw i<leader>w

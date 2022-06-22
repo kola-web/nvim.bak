@@ -4,12 +4,13 @@ if not status_ok then
 end
 
 local actions = require "telescope.actions"
+local icons = require "user.icons"
 
 telescope.setup {
   defaults = {
+
     prompt_prefix = "",
     selection_caret = "",
-    entry_prefix = "",
     path_display = { "smart" },
     file_ignore_patterns = {
       "node_modules",
@@ -21,7 +22,6 @@ telescope.setup {
       ".yarn",
       ".vscode",
     },
-
     mappings = {
       i = {
         ["<C-n>"] = actions.cycle_history_next,
@@ -36,12 +36,14 @@ telescope.setup {
         ["<Up>"] = actions.move_selection_previous,
 
         ["<CR>"] = actions.select_default,
-        ["<C-x>"] = actions.select_horizontal,
+        ["<C-s>"] = actions.select_horizontal,
         ["<C-v>"] = actions.select_vertical,
         ["<C-t>"] = actions.select_tab,
 
-        ["<C-u>"] = actions.preview_scrolling_up,
-        ["<C-d>"] = actions.preview_scrolling_down,
+        ["<c-d>"] = require("telescope.actions").delete_buffer,
+
+        -- ["<C-u>"] = actions.preview_scrolling_up,
+        -- ["<C-d>"] = actions.preview_scrolling_down,
 
         ["<PageUp>"] = actions.results_scrolling_up,
         ["<PageDown>"] = actions.results_scrolling_down,
@@ -55,7 +57,6 @@ telescope.setup {
       },
 
       n = {
-        ["q"] = actions.close,
         ["<esc>"] = actions.close,
         ["<CR>"] = actions.select_default,
         ["<C-x>"] = actions.select_horizontal,
@@ -87,16 +88,40 @@ telescope.setup {
         ["?"] = actions.which_key,
       },
     },
-    pickers = {},
-    extensions = {
-      ["ui-select"] = {
-        require("telescope.themes").get_dropdown {
-          -- previewer = false,
-          -- even more opts
+  },
+  pickers = {
+    -- Default configuration for builtin pickers goes here:
+    -- picker_name = {
+    --   picker_config_key = value,
+    --   ...
+    -- }
+    -- Now the picker_config_key will be applied every time you call this
+    -- builtin picker
+  },
+  extensions = {
+    file_browser = {
+      -- theme = "ivy",
+      -- require("telescope.themes").get_dropdown {
+      --   previewer = false,
+      --   -- even more opts
+      -- },
+      mappings = {
+        ["i"] = {
+          -- your custom insert mode mappings
+        },
+        ["n"] = {
+          -- your custom normal mode mappings
         },
       },
     },
+    -- ["ui-select"] = {
+    --   require("telescope.themes").get_dropdown {
+    --     previewer = false,
+    --     -- even more opts
+    --   },
+    -- },
   },
 }
 
-telescope.load_extension "ui-select"
+-- telescope.load_extension "ui-select"
+telescope.load_extension "file_browser"

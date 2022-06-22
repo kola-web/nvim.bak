@@ -3,20 +3,19 @@ if not status_ok then
   return
 end
 
+local ft_to_parser = require("nvim-treesitter.parsers").filetype_to_parsername
+ft_to_parser.motoko = "typescript"
+
 configs.setup {
   ensure_installed = { "html", "css", "javascript", "typescript", "vue" },
   sync_install = false, -- install languages synchronously (only applied to `ensure_installed`)
-  ignore_install = { "cc", "gcc", "clang", "cl", "zig" }, -- List of parsers to ignore installing
+  ignore_install = { "" }, -- List of parsers to ignore installing
   highlight = {
     -- use_languagetree = true,
     enable = true, -- false will disable the whole extension
     -- disable = { "css", "html" }, -- list of language that will be disabled
-    disable = {}, -- list of language that will be disabled
-    additional_vim_regex_highlighting = true,
-  },
-  matchup = {
-    enable = true, -- mandatory, false will disable the whole extension
-    -- [options]
+    disable = { "css", "markdown" }, -- list of language that will be disabled
+    -- additional_vim_regex_highlighting = true,
   },
   autopairs = {
     enable = true,
@@ -44,21 +43,5 @@ configs.setup {
   },
   playground = {
     enable = true,
-  },
-  textobjects = {
-    select = {
-      enable = true,
-
-      -- Automatically jump forward to textobj, similar to targets.vim
-      lookahead = true,
-
-      keymaps = {
-        -- You can use the capture groups defined in textobjects.scm
-        ["af"] = "@function.outer",
-        ["if"] = "@function.inner",
-        ["ac"] = "@class.outer",
-        ["ic"] = "@class.inner",
-      },
-    },
   },
 }

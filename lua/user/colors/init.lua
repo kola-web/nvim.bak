@@ -6,8 +6,8 @@
 -- local colorscheme = "swcatppuccin"
 -- local colorscheme = "gruvbox"
 -- local colorscheme = "nvcode"
--- local colorscheme = "darkplus"
-local colorscheme = "nightfox"
+local colorscheme = "darkplus"
+-- local colorscheme = "nightfox"
 
 vim.g.nvcode_termcolors = 256
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)

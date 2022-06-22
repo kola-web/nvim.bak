@@ -45,15 +45,9 @@ return packer.startup(function(use)
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
-  use {
-    "numToStr/Comment.nvim",
-    tag = "v0.6",
-    config = function()
-      require("Comment").setup()
-    end,
-  }
+  use "numToStr/Comment.nvim"
   use "kyazdani42/nvim-web-devicons"
-  use "kyazdani42/nvim-tree.lua"
+  use { "kyazdani42/nvim-tree.lua" }
   use "akinsho/bufferline.nvim"
   use "moll/vim-bbye"
   use "nvim-lualine/lualine.nvim"
@@ -66,6 +60,17 @@ return packer.startup(function(use)
   use "nacro90/numb.nvim"
   use "folke/zen-mode.nvim"
   use "folke/which-key.nvim"
+  use {
+    "christianchiarulli/JABS.nvim",
+    requires = { "kyazdani42/nvim-web-devicons" }, --optional
+  }
+
+  use {
+    "ghillb/cybu.nvim",
+    -- branch = "v1.x", -- won't receive breaking changes
+    -- branch = "main", -- timely updates
+    requires = { "kyazdani42/nvim-web-devicons" }, --optional
+  }
 
   -- Colorschemes
   -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out use "lunarvim/darkplus.nvim"
@@ -83,8 +88,25 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-emoji"
   use "hrsh7th/cmp-nvim-lua"
-  use "hrsh7th/cmp-copilot"
-
+  use {
+    "tzachar/cmp-tabnine",
+    config = function()
+      local tabnine = require "cmp_tabnine.config"
+      tabnine:setup {
+        max_lines = 1000,
+        max_num_results = 20,
+        sort = true,
+        run_on_every_keystroke = true,
+        snippet_placeholder = "..",
+        ignored_file_types = { -- default is not to ignore
+          -- uncomment to ignore in lua:
+          -- lua = true
+        },
+      }
+    end,
+    run = "./install.sh",
+    requires = "hrsh7th/nvim-cmp",
+  }
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
@@ -99,13 +121,14 @@ return packer.startup(function(use)
   use "ray-x/lsp_signature.nvim"
   use "b0o/SchemaStore.nvim"
   use "folke/trouble.nvim"
-  use "github/copilot.vim"
   use "RRethy/vim-illuminate"
   use "SmiteshP/nvim-gps"
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
+  use "tom-anders/telescope-vim-bookmarks.nvim"
   use "nvim-telescope/telescope-ui-select.nvim"
+  use "nvim-telescope/telescope-file-browser.nvim"
 
   -- Treesitter
   use {
@@ -148,7 +171,7 @@ return packer.startup(function(use)
   use { "aserowy/tmux.nvim" }
 
   --filetype
-  use { "nathom/filetype.nvim" }
+  -- use { "nathom/filetype.nvim" }
 
   -- markdown
   use {
@@ -158,7 +181,7 @@ return packer.startup(function(use)
   }
 
   -- marks
-  use { "chentau/marks.nvim" }
+  use { "chentoast/marks.nvim" }
 
   -- 注释
   use "folke/todo-comments.nvim"

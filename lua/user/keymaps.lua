@@ -116,4 +116,10 @@ keymap("n", "<C-z>", "<cmd>ZenMode<cr>", opts)
 
 keymap("i", "<C-e>", "<C-o>$", opts)
 keymap("i", "<C-a>", "<C-o>^", opts)
-keymap("", "<C-m>", "%", opts)
+keymap("", "<cr>", "%", opts)
+vim.api.nvim_set_keymap(
+  "n",
+  "=",
+  "<cmd>JABSOpen<cr>",
+  { noremap = true, silent = true, nowait = true }
+)
