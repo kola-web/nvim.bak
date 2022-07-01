@@ -28,6 +28,7 @@ local options = {
   tabstop = 2, -- insert 2 spaces for a tab
   cursorline = true, -- highlight the current line
   number = true, -- set numbered lines
+  relativenumber = true,
   laststatus = 3,
   showcmd = false,
   ruler = false,
@@ -41,13 +42,17 @@ local options = {
   foldmethod = "indent",
   foldlevel = 99,
 }
+
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+
 vim.opt.fillchars.eob = " "
+
 vim.g.do_filetype_lua = 1
 vim.g.did_load_filetypes = 0
 
 vim.opt.shortmess:append "c"
+
 
 for k, v in pairs(options) do
   vim.opt[k] = v

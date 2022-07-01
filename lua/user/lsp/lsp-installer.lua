@@ -13,7 +13,7 @@ local servers = {
   "tsserver",
   "yamlls",
   "bashls",
-  "vuels",
+  "volar",
   "angularls"
 }
 

@@ -8,6 +8,7 @@ vim.filetype.add {
   -- 文件名
   filename = {
     hosts = "sh",
+    zpreztorc = "sh",
   },
   pattern = {
     -- ["~/%.config/foo/.*"] = "fooscript",

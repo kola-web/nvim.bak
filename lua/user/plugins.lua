@@ -56,8 +56,9 @@ return packer.startup(function(use)
   use "lewis6991/impatient.nvim"
   use "lukas-reineke/indent-blankline.nvim"
   use "goolord/alpha-nvim"
-  use "unblevable/quick-scope"
   use "nacro90/numb.nvim"
+  use "monaqa/dial.nvim"
+  use "kevinhwang91/nvim-bqf"
   use "folke/zen-mode.nvim"
   use "folke/which-key.nvim"
   use {
@@ -78,6 +79,7 @@ return packer.startup(function(use)
   use "christianchiarulli/nvcode-color-schemes.vim"
   use "lunarvim/darkplus.nvim"
   use "EdenEast/nightfox.nvim" -- PackerJ
+  use "projekt0n/github-nvim-theme"
 
   -- cmp plugins
   use { "hrsh7th/nvim-cmp" } -- The completion plugin
@@ -88,25 +90,8 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-emoji"
   use "hrsh7th/cmp-nvim-lua"
-  use {
-    "tzachar/cmp-tabnine",
-    config = function()
-      local tabnine = require "cmp_tabnine.config"
-      tabnine:setup {
-        max_lines = 1000,
-        max_num_results = 20,
-        sort = true,
-        run_on_every_keystroke = true,
-        snippet_placeholder = "..",
-        ignored_file_types = { -- default is not to ignore
-          -- uncomment to ignore in lua:
-          -- lua = true
-        },
-      }
-    end,
-    run = "./install.sh",
-    requires = "hrsh7th/nvim-cmp",
-  }
+  use "github/copilot.vim"
+
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
@@ -188,6 +173,8 @@ return packer.startup(function(use)
 
   -- 代码运行
   use { "michaelb/sniprun", run = "bash ./install.sh" }
+
+  use { "johmsalas/text-case.nvim" }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

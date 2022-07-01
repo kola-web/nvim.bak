@@ -5,10 +5,6 @@ map L $
 map H ^
 
 omap ai aI
-onoremap iq i"
-onoremap aq a"
-onoremap iQ i'
-onoremap aQ a'
 
 noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
@@ -31,7 +27,7 @@ noremap K :vsc editor.action.showHover<CR>
 " noremap <S-tab> :vsc workbench.action.previousEditor<CR>
 
 " 多光标
-" noremap <C-b>  editor.action.addSelectionToNextFindMatch
+noremap <C-n>  editor.action.addSelectionToNextFindMatch
 vnoremap <C-x>  editor.action.moveSelectionToNextFindMatch
 
 " fold
@@ -44,8 +40,8 @@ noremap z6 editor.foldLevel6
 noremap z7 editor.foldLevel7
 noremap zj editor.gotoNextFold
 noremap zk editor.gotoPreviousFold
-noremap zp :vsc dakara-foldplus.cursor.exclude<cr>
-noremap zm :vsc dakara-foldplus.levelAtCursor<cr>
+noremap zc :vsc editor.fold<cr>
+noremap zo :vsc editor.unfold<cr>
 
 noremap zp editor.gotoParentFold
 noremap <space> :vsc whichkey.show<CR>
@@ -59,8 +55,6 @@ noremap gi :vsc editor.action.goToImplementation<CR>
 noremap gd :vsc editor.action.goToDeclaration<CR>
 noremap gD :vsc editor.action.revealDefinitionAside<CR>
 noremap gp :vsc references-view.showSupertypes<CR>
-
-
 
 noremap W <leader>w
 noremap E <leader>e

@@ -281,6 +281,8 @@ local vmappings = {
   s = { "<esc><cmd>'<,'>SnipRun<cr>", "Run range" },
 }
 
+
+
 which_key.setup(setup)
 which_key.register(mappings, opts)
 which_key.register(vmappings, vopts)

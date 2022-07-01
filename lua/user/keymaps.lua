@@ -108,15 +108,13 @@ keymap(
   "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>",
   opts
 )
-keymap("n", "<C-t>", "<cmd>lua vim.lsp.buf.document_symbol()<cr>", opts)
-keymap("n", "<C-s>", "<cmd>vsplit<cr>", opts)
-keymap("n", "<C-z>", "<cmd>ZenMode<cr>", opts)
+keymap("n", "<C-s>", "<cmd>save<cr>", opts)
 -- Change '<CR>' to whatever shortcut you like :)
 -- vim.api.nvim_set_keymap('n', '<CR>', '<cmd>NeoZoomToggle<CR>', { noremap=true, silent=true, nowait=true })
 
 keymap("i", "<C-e>", "<C-o>$", opts)
 keymap("i", "<C-a>", "<C-o>^", opts)
-keymap("", "<cr>", "%", opts)
+keymap("", "<C-m>", "%", opts)
 vim.api.nvim_set_keymap(
   "n",
   "=",
