@@ -4,6 +4,7 @@ vim.filetype.add {
     pn = "potion",
     wxml = "html",
     wxss = "css",
+    wxs = "javascript"
   },
   -- 文件名
   filename = {

@@ -455,3 +455,4 @@ local codicons = {
   ['zoom-out']                                = { icon = '', unicode = 0xEB82 },
 }
 ```
+
