@@ -13,14 +13,58 @@ telescope.setup {
     selection_caret = "",
     path_display = { "smart" },
     file_ignore_patterns = {
-      "node_modules",
-      ".work/.*",
-      ".cache/.*",
-      ".idea/.*",
-      "dist/.*",
-      ".git/.*",
-      ".yarn",
-      ".vscode",
+      ".git/",
+      "target/",
+      "docs/",
+      "vendor/*",
+      "%.lock",
+      "__pycache__/*",
+      "%.sqlite3",
+      "%.ipynb",
+      "node_modules/*",
+      "%.jpg",
+      "%.jpeg",
+      "%.png",
+      "%.svg",
+      "%.otf",
+      "%.ttf",
+      "%.webp",
+      ".dart_tool/",
+      ".github/",
+      ".gradle/",
+      ".idea/",
+      ".settings/",
+      ".vscode/",
+      ".yarn/",
+      "__pycache__/",
+      "build/",
+      "env/",
+      "gradle/",
+      "node_modules/",
+      "%.pdb",
+      "%.dll",
+      "%.class",
+      "%.exe",
+      "%.cache",
+      "%.ico",
+      "%.pdf",
+      "%.dylib",
+      "%.jar",
+      "%.docx",
+      "%.met",
+      "smalljre_*/*",
+      ".vale/",
+      "%.burp",
+      "%.mp4",
+      "%.mkv",
+      "%.rar",
+      "%.zip",
+      "%.7z",
+      "%.tar",
+      "%.bz2",
+      "%.epub",
+      "%.flac",
+      "%.tar.gz",
     },
     mappings = {
       i = {
@@ -99,21 +143,6 @@ telescope.setup {
     -- builtin picker
   },
   extensions = {
-    file_browser = {
-      -- theme = "ivy",
-      -- require("telescope.themes").get_dropdown {
-      --   previewer = false,
-      --   -- even more opts
-      -- },
-      mappings = {
-        ["i"] = {
-          -- your custom insert mode mappings
-        },
-        ["n"] = {
-          -- your custom normal mode mappings
-        },
-      },
-    },
     -- ["ui-select"] = {
     --   require("telescope.themes").get_dropdown {
     --     previewer = false,

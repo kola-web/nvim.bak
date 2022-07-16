@@ -40,8 +40,6 @@ noremap z6 editor.foldLevel6
 noremap z7 editor.foldLevel7
 noremap zj editor.gotoNextFold
 noremap zk editor.gotoPreviousFold
-noremap zc :vsc editor.fold<cr>
-noremap zo :vsc editor.unfold<cr>
 
 noremap zp editor.gotoParentFold
 noremap <space> :vsc whichkey.show<CR>
