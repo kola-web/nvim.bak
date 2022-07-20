@@ -40,8 +40,10 @@ noremap z6 editor.foldLevel6
 noremap z7 editor.foldLevel7
 noremap zj editor.gotoNextFold
 noremap zk editor.gotoPreviousFold
-
 noremap zp editor.gotoParentFold
+noremap zm :vsc dakara-foldplus.levelAtCursor<CR>
+noremap zr :vsc dakara-foldplus.levelAtCursor.unfold<CR>
+
 noremap <space> :vsc whichkey.show<CR>
 
 noremap <C-m> :vsc workbench.action.minimizeOtherEditors<CR>
